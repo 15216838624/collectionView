@@ -19,9 +19,10 @@
             CGFloat x = CGRectGetMaxX(preattr.frame)+self.minimumInteritemSpacing;
             if (x+attr.frame.size.width>self.collectionView.frame.size.width) {
                 x = 0;
-                y = (attr.frame.size.height+self.minimumLineSpacing) *i;
+                y = CGRectGetMaxY(preattr.frame) + self.minimumLineSpacing;
             }
             frame.origin.x = x;
+            frame.origin.y = y;
             attr.frame = frame;
         }
     }
